@@ -1,0 +1,23 @@
+[
+    {
+      "logo": "https://i.ibb.co/thzyQvD/chip-1.png",
+      "categoryName": "Engineering",
+      "availableJob": 250
+    },
+    {
+      "logo": "https://i.ibb.co/bLFgZ6g/social-media-1.png",
+      "categoryName": "Marketing",
+      "availableJob": 100
+    },
+    {
+      "logo": "https://i.ibb.co/99fdxtT/business-1.png",
+      "categoryName": "Creative Design",
+      "availableJob": 70
+    },
+    {
+      "logo": "https://i.ibb.co/fYx5d6d/accounts-1.png",
+      "categoryName": "Finance",
+      "availableJob": 50
+    }
+  ]
+  

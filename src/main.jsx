@@ -9,6 +9,7 @@ import App from './App';
 import ErrorPage from './ErrorPage';
 import Home from './Home';
 import Blog from './Blog'
+import Statistics from './Statistics';
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog></Blog>
+      },
+      {
+        path: '/statistics',
+        element: <Statistics></Statistics>
       }
     ]
   },

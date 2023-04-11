@@ -41,7 +41,7 @@ const Statistics = () => {
         <div className='mt-12'>
             <h3 className='text-center mb-6  text-3xl font-semibold '>Assignment Marks in PieChart</h3>
             
-                <PieChart className='mx-auto' width={400} height={400}>
+                <PieChart className='mx-auto' width={400} height={400} isAnimationActive={true}>
                     <Pie
                         dataKey="marks"
                         isAnimationActive={false}

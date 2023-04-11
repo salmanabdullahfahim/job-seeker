@@ -14,14 +14,7 @@ const Home = () => {
             .then(data => setCategory(data))
     }, []);
 
-    // const job = useLoaderData();
-
-    const [job, setJob] = useState([]);
-    useEffect(()=>{
-        fetch('job.json')
-        .then(res => res.json())
-        .then(data => setJob(data))
-    },[])
+    const job = useLoaderData();
 
     const handleSeeAllJobs = () => {
         

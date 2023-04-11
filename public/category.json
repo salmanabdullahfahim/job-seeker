@@ -2,22 +2,26 @@
     {
       "logo": "https://i.ibb.co/thzyQvD/chip-1.png",
       "categoryName": "Engineering",
-      "availableJob": 250
+      "availableJob": 250,
+      "id": 1
     },
     {
       "logo": "https://i.ibb.co/bLFgZ6g/social-media-1.png",
       "categoryName": "Marketing",
-      "availableJob": 100
+      "availableJob": 100,
+      "id": 2
     },
     {
       "logo": "https://i.ibb.co/99fdxtT/business-1.png",
       "categoryName": "Creative Design",
-      "availableJob": 70
+      "availableJob": 70,
+      "id": 3
     },
     {
       "logo": "https://i.ibb.co/fYx5d6d/accounts-1.png",
       "categoryName": "Finance",
-      "availableJob": 50
+      "availableJob": 50,
+      "id": 4
     }
   ]
   

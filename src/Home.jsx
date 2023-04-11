@@ -6,7 +6,7 @@ import FeaturedJob from './FeaturedJob';
 const Home = () => {
 
     const [category, setCategory] = useState([]);
-    const [jobsToShow, setJobsToShow] = useState(4);
+    const [showAll,setShowAll] = useState(false);
 
     useEffect(() => {
         fetch('category.json')
@@ -14,15 +14,23 @@ const Home = () => {
             .then(data => setCategory(data))
     }, []);
 
-    const job = useLoaderData();
+    // const job = useLoaderData();
+
+    const [job, setJob] = useState([]);
+    useEffect(()=>{
+        fetch('job.json')
+        .then(res => res.json())
+        .then(data => setJob(data))
+    },[])
 
     const handleSeeAllJobs = () => {
-        setJobsToShow(job.length);
+        
+        setShowAll(true)
     };
 
     return (
         <div>
-            <div className='hero-section mt-12 flex items-center justify-around'>
+            <div className='hero-section mt-12 flex flex-col lg:flex-row items-center justify-around'>
                 <div className='ms-12'>
                     <h1 className='text-6xl font-semibold'>One Step Closer To Your <span className='text-violet-600'>Dream Job</span></h1>
                     <p className='mt-2'>Explore thousands of job opportunities with all the information you need. Its your future. Come find it. Manage all your job application from start to finish.</p>
@@ -48,17 +56,16 @@ const Home = () => {
                 <p className='text-center mt-2'>Explore thousands of job opportunities with all the information you need. Its your future</p>
 
                 <div className='grid grid-cols lg:grid-cols-2 gap-3 mt-8 mx-6'>
-                    
+
                     {
-                        job.slice(0, jobsToShow).map(singleJob => <FeaturedJob key={singleJob.id} singleJob={singleJob}></FeaturedJob>)
+                        job.slice(0, showAll ? 6 : 4).map(singleJob => <FeaturedJob key={singleJob.id} singleJob={singleJob}></FeaturedJob>)
                     }
                 </div>
-                
-                {jobsToShow < job.length &&
+
                     <div className='text-center mt-8 mb-6'>
                         <button className='bg-violet-500 text-white font-semibold rounded px-5 py-2' onClick={handleSeeAllJobs}>See All Jobs</button>
                     </div>
-                }
+               
             </div>
         </div>
     );

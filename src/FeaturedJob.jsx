@@ -1,4 +1,6 @@
 import React from 'react';
+import { MapPinIcon } from '@heroicons/react/24/solid'
+import { Link } from 'react-router-dom';
 
 const FeaturedJob = ({ singleJob }) => {
 
@@ -14,15 +16,19 @@ const FeaturedJob = ({ singleJob }) => {
                 <h5 className='border border-violet-500 text-violet-500 p-1 rounded'>{fullTimeOrPart}</h5>
             </div>
 
-            <div className='flex gap-2'>
-                <p>{location}</p>
+            <div className='flex gap-4 items-center'>
+                <div className='flex items-center justify-center gap-2'>
+                    <MapPinIcon className="h-4 w-4 text-gray-500" />
+                    <p>{location}</p>
+                </div>
                 <p>Salary: {salary}</p>
             </div>
             <div className='mt-auto'>
-                <button className='bg-violet-500 text-white font-semibold rounded px-5 py-2 mt-3'>View Details</button>
+                <Link to={`/jobDetails/${id}`}><button className='bg-violet-500 text-white font-semibold rounded px-5 py-2 mt-3'>View Details</button></Link>
             </div>
         </div>
     );
 };
+
 
 export default FeaturedJob;

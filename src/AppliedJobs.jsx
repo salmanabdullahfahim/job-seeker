@@ -15,8 +15,8 @@ const AppliedJobs = () => {
 
     return (
         <div>
-            <div className="bg-gradient-to-r from-indigo-400 via-purple-600 to-purple-400 py-3 rounded">
-                <h2 className="text-center mt-12 font-semibold text-4xl pb-12 text-white">Applied Jobs</h2>
+            <div className="bg-gradient-to-r from-indigo-400 via-purple-600 to-purple-400 py-2 rounded">
+                <h2 className="text-center mt-12 font-semibold text-4xl pb-8 text-white">Applied Jobs</h2>
             </div>
 
             <div className="flex justify-end space-x-4 mt-4 mr-12">

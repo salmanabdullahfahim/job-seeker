@@ -42,7 +42,10 @@ const JobDetails = () => {
 
     return (
         <div>
-            <h2 className='text-center mt-12 font-semibold text-3xl'>Job Details</h2>
+            <div className="bg-gradient-to-r from-indigo-400 via-purple-600 to-purple-400 py-2 rounded">
+            <h2 className='text-center mt-12 font-semibold text-4xl text-white pb-8'>Job Details</h2>
+            </div>
+           
 
             <div className='flex flex-col lg:flex-row  mt-6 gap-6 mx-12'>
                 <div className=''>

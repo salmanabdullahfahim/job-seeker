@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { json, useLoaderData, useParams } from 'react-router-dom';
 import { MapPinIcon, PhoneIcon, CurrencyDollarIcon, EnvelopeIcon, BriefcaseIcon } from '@heroicons/react/24/solid'
-import { addToDb } from './utilities/fakedb';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 
 const JobDetails = () => {
 
@@ -18,6 +20,22 @@ const JobDetails = () => {
             setDetails(findJob);
         }
     }, [data, dynamic.id])
+
+    const addToLocalStorage = (id) => {
+        const previousAppliedJobs = JSON.parse(localStorage.getItem('job-id'));
+        if (previousAppliedJobs) {
+            if (previousAppliedJobs.includes(id)) {
+                toast.error('Already applied!');
+            }
+            else {
+                localStorage.setItem('job-id', JSON.stringify([...previousAppliedJobs, id]));
+            }
+        }
+        else{
+            localStorage.setItem('job-id', JSON.stringify([id]));
+        }
+      
+    }
 
 
 
@@ -72,7 +90,7 @@ const JobDetails = () => {
 
                     </div>
                     <div className="text-center mt-6">
-                        <button className='bg-violet-500 text-white font-semibold rounded px-8 py-2 w-full' onClick={() => addToDb(details.id)}>Apply Now</button>
+                        <button className='bg-violet-500 text-white font-semibold rounded px-8 py-2 w-full' onClick={() => addToLocalStorage(details.id)}>Apply Now</button>
                     </div>
                 </div>
             </div>

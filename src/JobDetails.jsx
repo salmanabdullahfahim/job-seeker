@@ -58,7 +58,7 @@ const JobDetails = () => {
                 <div>
                     <div className='p-4 bg-violet-100 shadow-xl rounded-md h-80 w-80'>
                         <h2 className='font-semibold text-xl divide-y mb-2'>Job Details</h2>
-                        <hr />
+                        <hr/>
 
                         <div className='mt-2 flex items-center gap-2'>
                             <CurrencyDollarIcon className='w-4 h-4 text-violet-500'></CurrencyDollarIcon>

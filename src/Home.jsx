@@ -6,7 +6,7 @@ import FeaturedJob from './FeaturedJob';
 const Home = () => {
 
     const [category, setCategory] = useState([]);
-    const [showAll,setShowAll] = useState(false);
+    const [jobsToShow, setJobsToShow] = useState(4);
 
     useEffect(() => {
         fetch('category.json')
@@ -17,8 +17,7 @@ const Home = () => {
     const job = useLoaderData();
 
     const handleSeeAllJobs = () => {
-        
-        setShowAll(true)
+        setJobsToShow(job.length);
     };
 
     return (
@@ -51,14 +50,16 @@ const Home = () => {
                 <div className='grid grid-cols lg:grid-cols-2 gap-3 mt-8 mx-6'>
 
                     {
-                        job.slice(0, showAll ? 6 : 4).map(singleJob => <FeaturedJob key={singleJob.id} singleJob={singleJob}></FeaturedJob>)
+                        job.slice(0, jobsToShow).map(singleJob => <FeaturedJob key={singleJob.id} singleJob={singleJob}></FeaturedJob>)
                     }
                 </div>
 
+                {jobsToShow < job.length &&
                     <div className='text-center mt-8 mb-6'>
                         <button className='bg-violet-500 text-white font-semibold rounded px-5 py-2' onClick={handleSeeAllJobs}>See All Jobs</button>
                     </div>
-               
+                }
+
             </div>
         </div>
     );

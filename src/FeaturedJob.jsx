@@ -6,7 +6,7 @@ const FeaturedJob = ({ singleJob }) => {
 
     const { id, companyLogo, jobTitle, companyName, jobType, location, fullTimeOrPart, salary } = singleJob;
     return (
-        <div className='border rounded p-6 flex flex-col'>
+        <div className='border-2 rounded p-6 flex flex-col'>
             <img className='w-1/2' src={companyLogo} alt="" />
             <h3 className='font-medium'>{jobTitle}</h3>
             <p>{companyName}</p>
